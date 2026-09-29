@@ -1,0 +1,393 @@
+/* ==========================================================================
+   EditBuddy - Home Screen Styling
+   ========================================================================== */
+
+.home-container {
+  padding: 32px 24px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Hero Section with Buddy */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: linear-gradient(135deg, #eef2ff 0%, #fdf2f8 50%, #fffbeb 100%);
+  border-radius: var(--radius-xl);
+  padding: 36px 40px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 540px;
+  margin-bottom: 24px;
+}
+
+/* Mascot Buddy Greeting */
+.hero-mascot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.buddy-avatar-wrapper {
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--transition-bounce);
+}
+
+.buddy-avatar-wrapper:hover {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.buddy-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg), 0 0 0 6px rgba(255, 255, 255, 0.8);
+  font-size: 58px;
+  animation: gentle-bob 3.5s ease-in-out infinite;
+}
+
+.buddy-speech-bubble {
+  position: relative;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 18px;
+  border-bottom-right-radius: 4px;
+  box-shadow: var(--shadow-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  max-width: 220px;
+  text-align: center;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  animation: slideUp 0.4s ease-out;
+}
+
+.buddy-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 28px;
+  border-width: 8px 8px 0 0;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+/* Section Header */
+.section-heading-wrap {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.section-prompt {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.section-subprompt {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* 3 Learning Mode Cards */
+.mode-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mode-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 2px solid transparent;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.mode-card.photo {
+  border-color: rgba(99, 102, 241, 0.2);
+}
+.mode-card.photo:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.18);
+}
+
+.mode-card.video {
+  border-color: rgba(236, 72, 153, 0.2);
+}
+.mode-card.video:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 12px 28px rgba(236, 72, 153, 0.18);
+}
+
+.mode-card.college {
+  border-color: rgba(245, 158, 11, 0.2);
+}
+.mode-card.college:hover {
+  border-color: var(--accent-amber);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.18);
+}
+
+.mode-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.mode-card.photo .mode-icon-box {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.mode-card.video .mode-icon-box {
+  background: var(--secondary-bg);
+  color: var(--secondary);
+}
+
+.mode-card.college .mode-icon-box {
+  background: var(--accent-amber-bg);
+  color: var(--accent-amber);
+}
+
+.mode-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.mode-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.mode-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.mode-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-full);
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.mode-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo .mode-progress-fill { background: linear-gradient(90deg, #6366f1, #818cf8); }
+.video .mode-progress-fill { background: linear-gradient(90deg, #ec4899, #f472b6); }
+.college .mode-progress-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+.mode-action-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.photo .mode-action-btn {
+  background: var(--primary-bg);
+  color: var(--primary-dark);
+}
+.photo:hover .mode-action-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.video .mode-action-btn {
+  background: var(--secondary-bg);
+  color: var(--secondary);
+}
+.video:hover .mode-action-btn {
+  background: var(--secondary);
+  color: white;
+}
+
+.college .mode-action-btn {
+  background: var(--accent-amber-bg);
+  color: #b45309;
+}
+.college:hover .mode-action-btn {
+  background: var(--accent-amber);
+  color: white;
+}
+
+/* Learner Progress & Achievements Dashboard */
+.learner-dashboard {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dashboard-title {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-box {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast);
+}
+
+.stat-box:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+.stat-icon {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .mode-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 28px 20px;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EditBuddy - Learn Photo & Video Editing Step-by-Step</title>
+  <meta name="description" content="A friendly, colourful, and encouraging personal editing tutor that teaches photo and video editing one small step at a time.">
+
+  <!-- Google Fonts: Outfit (modern, clean, and friendly) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/picker.css">
+  <link rel="stylesheet" href="css/lessons.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/results.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+      <div class="nav-brand" id="nav-brand-btn" title="Back to Home">
+        <div class="nav-brand-logo">✨</div>
+        <div>
+          <div class="nav-brand-title text-gradient-primary">EditBuddy</div>
+          <div class="nav-brand-tagline">Your Personal Editing Tutor</div>
+        </div>
+      </div>
+
+      <!-- Real-time Learner Stats -->
+      <div class="nav-stats">
+        <div class="stat-pill xp" title="Total Experience Points">
+          <span>⭐</span>
+          <span id="nav-xp-val">0 XP</span>
+        </div>
+        <div class="stat-pill streak" title="Daily Learning Streak">
+          <span>🔥</span>
+          <span id="nav-streak-val">1d</span>
+        </div>
+        <div class="stat-pill badges" title="Unlocked Badges">
+          <span>🎖️</span>
+          <span id="nav-badges-val">0</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-icon" id="nav-sound-toggle" title="Toggle Sound Cues">
+          🔊
+        </button>
+      </div>
+    </header>
+
+    <!-- Dynamic SPA View Container -->
+    <main id="main-view-container"></main>
+
+    <!-- Global Modal Overlay -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-content" id="modal-container">
+        <!-- Rendered dynamically (Lesson Tutorial or Results Scorecard) -->
+      </div>
+    </div>
+
+    <!-- Celebration Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+  </div>
+
+  <!-- Main ES Module Application Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

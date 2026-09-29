@@ -1,0 +1,461 @@
+/* ==========================================================================
+   EditBuddy - Learning Path & Lesson Modal Styling
+   ========================================================================== */
+
+.path-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+  width: 100%;
+}
+
+.path-header {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 24px 30px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.path-info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.path-icon-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.path-icon-photo { background: var(--primary-bg); color: var(--primary); }
+.path-icon-video { background: var(--secondary-bg); color: var(--secondary); }
+.path-icon-college { background: var(--accent-amber-bg); color: var(--accent-amber); }
+
+.path-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.path-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.path-overall-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.path-progress-chip {
+  background: var(--bg-subtle);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Roadmap Levels Timeline */
+.levels-roadmap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.levels-roadmap::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 42px;
+  width: 4px;
+  background: linear-gradient(180deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
+  border-radius: var(--radius-full);
+  z-index: 1;
+  opacity: 0.25;
+}
+
+.level-card-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.level-node-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: white;
+  border: 4px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text-muted);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.level-node-circle.unlocked {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-bg);
+}
+
+.level-node-circle.completed {
+  border-color: var(--accent-emerald);
+  background: var(--accent-emerald);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.level-node-circle.current {
+  animation: pulse-glow 2s infinite;
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.level-card-body {
+  flex: 1;
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 22px 26px;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.level-card-body:hover:not(.locked) {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.level-card-body.locked {
+  opacity: 0.65;
+  background: var(--bg-subtle);
+  cursor: not-allowed;
+}
+
+.level-card-body.current-card {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: var(--shadow-md);
+}
+
+.level-meta-wrap {
+  flex: 1;
+}
+
+.level-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.level-number-badge {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--primary-bg);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.level-score-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--accent-emerald-bg);
+  color: #047857;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.level-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.level-short-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.level-action-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.level-stars {
+  display: flex;
+  gap: 3px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.level-stars .star-filled {
+  color: #f59e0b;
+}
+
+/* ==========================================================================
+   Lesson Tutorial Modal
+   ========================================================================== */
+.lesson-modal-dialog {
+  max-width: 720px;
+}
+
+.lesson-hero-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid var(--border-color);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.lesson-tag-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.lesson-modal-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* Plain language explanation section */
+.lesson-section-box {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.lesson-box-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.lesson-box-content {
+  font-size: 15px;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Visual / Animated Tutorial Player Box */
+.visual-tutorial-box {
+  background: #0f172a;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 24px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.tutorial-video-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.tutorial-video-screen {
+  width: 100%;
+  height: 220px;
+  background: #1e293b;
+  border-radius: var(--radius-md);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tutorial-animation-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tutorial-overlay-steps {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tutorial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.tutorial-play-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Task Checklist Card */
+.task-card-box {
+  background: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.task-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #065f46;
+  margin-bottom: 10px;
+}
+
+.task-steps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #064e3b;
+  font-weight: 600;
+}
+
+.task-step-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  background: white;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.task-step-checkbox.done {
+  background: #059669;
+}
+
+/* Progressive Hints Accordion */
+.hints-accordion {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.hints-header {
+  padding: 12px 18px;
+  background: var(--bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  user-select: none;
+}
+
+.hints-content {
+  padding: 14px 18px;
+  background: white;
+  display: none;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.hints-content.open {
+  display: block;
+}
+
+.hint-step-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--accent-amber-bg);
+  color: #92400e;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 800;
+  margin-right: 6px;
+}

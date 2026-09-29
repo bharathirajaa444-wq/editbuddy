@@ -1,0 +1,228 @@
+/* ==========================================================================
+   EditBuddy - Results & Scoring Modal Styling
+   ========================================================================== */
+
+.results-modal-dialog {
+  max-width: 600px;
+  text-align: center;
+}
+
+.results-header {
+  padding: 30px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-header.pass {
+  background: linear-gradient(135deg, #ecfdf5 0%, #e0e7ff 100%);
+}
+
+.results-header.retry {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef2f2 100%);
+}
+
+/* Buddy Mascot Reaction */
+.results-mascot-reaction {
+  font-size: 54px;
+  margin-bottom: 12px;
+  animation: gentle-bob 3s ease-in-out infinite;
+}
+
+.results-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.results-title.pass {
+  color: #065f46;
+}
+
+.results-title.retry {
+  color: #9a3412;
+}
+
+.results-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 440px;
+}
+
+/* Circular Score Gauge */
+.score-circle-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 20px auto 10px;
+}
+
+.score-svg {
+  transform: rotate(-90deg);
+  width: 140px;
+  height: 140px;
+}
+
+.score-bg-circle {
+  fill: none;
+  stroke: #e2e8f0;
+  stroke-width: 10;
+}
+
+.score-progress-circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pass .score-progress-circle {
+  stroke: url(#scoreGradPass);
+}
+
+.retry .score-progress-circle {
+  stroke: url(#scoreGradRetry);
+}
+
+.score-number-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-percent {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-main);
+}
+
+.score-target-hint {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Unlock Status Pill */
+.unlock-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.unlock-status-pill.unlocked {
+  background: #10b981;
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.unlock-status-pill.locked {
+  background: #f59e0b;
+  color: white;
+}
+
+/* Feedback Breakdown */
+.feedback-box {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.feedback-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.feedback-section-title.good {
+  color: #059669;
+}
+
+.feedback-section-title.improve {
+  color: #d97706;
+}
+
+.feedback-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.feedback-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Pro Tip Callout */
+.buddy-pro-tip {
+  background: var(--primary-bg);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.buddy-pro-tip strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 13px;
+}
+
+/* Results Action Buttons */
+.results-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 24px;
+}
+
+.results-btn-retry {
+  background: white;
+  border: 2px solid var(--accent-amber);
+  color: #b45309;
+}
+
+.results-btn-retry:hover {
+  background: var(--accent-amber-bg);
+}
+
+.results-btn-next {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
